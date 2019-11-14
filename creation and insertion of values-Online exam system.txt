@@ -1,0 +1,104 @@
+REGISTER
+
+create table register(stud_id number primary key, name varchar2(20), date_of_birth DATE, email_id varchar2(30), password varchar2(20), qualification varchar2(10), year_of_passing number(4), percentage number(3), ph_no number(12), city varchar2(20), state varchar2(20));
+
+desc register
+
+
+insert into register (stud_id, name, date_of_birth, email_id, password, qualification, year_of_passing, percentage,  ph_no, city, state) values (1, 'pavithra', '12-sep-1997', 'pavi@gmail.com', 'pavi123', 'B.E.', 2019, 78, 9876543221, 'Chennai', 'TamilNadu');
+
+insert into register (stud_id, name, date_of_birth, email_id, password, qualification, year_of_passing, percentage,  ph_no, city, state) values (2, 'kaviya', '1-dec-1998', 'kaviya@gmail.com', 'kaviya123', 'B.E.', 2019, 80, 9876543087, 'Coimbatore', 'TamilNadu');
+
+insert into register (stud_id, name, date_of_birth, email_id, password, qualification, year_of_passing, percentage,  ph_no, city, state) values (3, 'mukul', '23-jan-1997', 'mukul@gmail.com', 'mukul23', 'B.E.', 2019, 87, 9675343221, 'Mysore', 'Karnataka');
+
+insert into register (stud_id, name, date_of_birth, email_id, password, qualification, year_of_passing, percentage,  ph_no, city, state) values (4, 'sudeepth', '4-jun-1997', 'sudeepth@gmail.com', 'sudeepth78', 'B.E.', 2019, 82, 9876879621, 'Bangalore', 'Karnataka');
+
+select * from register
+
+LOGIN_TABLE
+
+create table login_table(mail_id varchar2(30), password varchar2(20));
+
+insert  all 
+into login_table (mail_id , password) values ('pavi@gmail.com', 'pavi123')
+into login_table (mail_id , password) values ('kaviya@gmail.com', 'kaviya123')
+into login_table (mail_id, password) values ('mukul@gmail.com', 'mukul23')
+into login_table (mail_id , password) values ('sudeepth@gmail.com', 'sudeepth78')
+select * from dual;
+
+select * from login_table
+
+SUBJECT
+
+create table subject(subject_id varchar2(20) primary key, subject_name varchar2(20));
+
+desc subject
+
+drop table subject
+
+insert  all 
+into subject (subject_id , subject_name) values ('LTI12', 'JAVA')
+into subject (subject_id , subject_name) values ('LTI57', 'SQL')
+into subject (subject_id, subject_name) values ('LTI45', 'PHP')
+into subject (subject_id , subject_name) values ('LTI87', 'PYTHON')
+select * from dual;
+
+select * from subject
+
+QUESTION
+
+create table question(ques_id number(10) primary key, ques_no number(5), ques_name varchar2(1000), option1 varchar2(100), option2 varchar2(100), option3 varchar2(100), option4 varchar2(100), answer varchar2(100), marks number(10)); 
+
+drop table question
+		
+desc question
+
+insert all 
+into question(ques_id, ques_no, ques_name, option1, option2, option3, option4, answer, marks)values (120, 1, 'What is the name of the method used       to start a thread execution?', 'init()', 'start()', 'run()', 'resume()', 'b', 5)
+into question(ques_id, ques_no, ques_name, option1, option2, option3, option4, answer, marks)values(121, 2, 'Which is a valid keyword in java?', 'interface', 'string', 'Float', 'unsigned', 'a', 5)
+into question(ques_id, ques_no, ques_name, option1, option2, option3, option4, answer, marks)values(122, 3, 'Which is a valid declarations of a String?', 'String s1 = null', 'String s2 = "null"', 'String s3 = (String) "abc"', 'String s4 = (String) "\ufeed"', 'a', 5)
+select * from dual;
+
+select * from question
+
+
+EXAM
+
+create table exam(exam_id number(10) primary key, ques_id number(10),constraint qidfk foreign key (ques_id) references question(ques_id), subject_id varchar2(20), stud_id number,constraint sidfk foreign key (stud_id) references register(stud_id), total_duration number);
+
+desc exam
+
+insert all 
+into exam(exam_id, ques_id, subject_id, stud_id, total_duration) values (34, 121,'LTI12', 2, 30)
+into exam(exam_id, ques_id, subject_id, stud_id, total_duration) values (40, 122,'LTI45', 4, 30)
+select * from dual;
+
+select * from exam
+
+LEVEL_TABLE
+
+create table level_table(level_id number primary key, ques_id number(10),constraint qsidfk foreign key (ques_id) references question(ques_id), level_no number(5))
+
+desc level_table
+
+insert all 
+into level_table(level_id, ques_id, level_no) values (10, 122, 1)
+into level_table(level_id, ques_id, level_no) values (11, 120, 2)
+select * from dual;
+
+select * from level_table
+
+SCORE
+
+create table score(score_id number primary key, subject_id varchar2(20),constraint sbid foreign key (subject_id)references subject(subject_id),  stud_id number,constraint sbidfk foreign key (stud_id) references register(stud_id), test_date DATE, score number(10), status varchar2(10))
+
+desc score
+
+insert all
+into score(score_id, subject_id,  stud_id, test_date, score, status) values (1, 'LTI12', 2, '14-nov-2019', 36, 'pass')
+into score(score_id, subject_id,  stud_id, test_date, score, status) values (2, 'LTI45', 3, '15-nov-2019', 20, 'fail')
+into score(score_id, subject_id,  stud_id, test_date, score, status) values (3, 'LTI87', 4, '16-nov-2019', 40, 'pass')
+select * from dual;
+
+select * from score
+
