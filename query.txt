@@ -3,3 +3,5 @@ select subject.subject_name,exam.ques_id from subject,exam where subject.subject
 select exam.stud_id,exam.total_duration,question.ques_no,question.ques_name,question.option1 from exam,question where exam.ques_id=question.ques_id;
 
 select register.name,register.qualification,exam.stud_id from register,exam where register.stud_id=exam.stud_id;
+
+select s.score,s.status from score s, student st,subject sub where s.STUD_ID=st.STUDENTID and s.subject_id=sub.subject_id;
