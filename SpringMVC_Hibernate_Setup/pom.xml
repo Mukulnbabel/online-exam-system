@@ -11,6 +11,7 @@
 	<properties>
 		<spring.version>5.1.1.RELEASE</spring.version>
 		<hibernate.version>5.2.10.Final</hibernate.version>
+		<security.version>4.0.3.RELEASE</security.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -19,7 +20,21 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
+		 <dependency>
+     <groupId>org.springframework.security</groupId>
+     <artifactId>spring-security-core</artifactId>
+     <version>${security.version}</version>
+   </dependency>
+    <dependency>
+     <groupId>org.springframework.security</groupId>
+     <artifactId>spring-security-config</artifactId>
+     <version>${security.version}</version>
+   </dependency>
+ <dependency>
+     <groupId>org.springframework.security</groupId>
+     <artifactId>spring-security-core</artifactId>
+     <version>${security.version}</version>
+   </dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
