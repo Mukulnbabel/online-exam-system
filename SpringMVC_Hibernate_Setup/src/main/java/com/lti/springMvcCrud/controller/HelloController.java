@@ -1,4 +1,4 @@
-package com.lti.springSecurityconfig;
+package com.lti.springMvcCrud.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
