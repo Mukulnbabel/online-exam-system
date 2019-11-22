@@ -10,7 +10,7 @@ AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { HibernateConfig.class,SpringSecurityConfig.class };
+		return new Class[] { HibernateConfig.class};
 	}
 
 	@Override

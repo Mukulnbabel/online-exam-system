@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.springMvcCrud.Dao.UserDao;
-import com.lti.springMvcCrud.Dao.UserRepository;
+
 import com.lti.springMvcCrud.entity.User;
 
 @Service
