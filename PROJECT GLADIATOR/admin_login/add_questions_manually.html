@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <title>Add Questions Manually</title>
+
+   <link rel="stylesheet" href="css/style.css">
+
+<header>
+
+</header>
+<body>
+    
+<div class="container">
+	<div class="signIn">ADD QUESTIONS MANUALLY</div>
+	<div class="fold">
+		<form>
+			<input type="text" name="" placeholder="Question name">
+            <input type="text" name="" placeholder="Option1">
+            <input type="text" name="" placeholder="Option2">
+            <input type="text" name="" placeholder="Option3">
+            <input type="text" name="" placeholder="Option4">
+            <input type="text" name="" placeholder="Answer">
+			<center><input type="submit" name="" value="ADD"></center>
+		</form>
+	</div>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.signIn').click(function(){
+                $('.fold').toggleClass('active')
+            })
+        })
+    </script>
+
+</html>
+

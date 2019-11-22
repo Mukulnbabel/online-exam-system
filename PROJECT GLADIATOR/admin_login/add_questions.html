@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <title>ADD QUESTIONS BY FILES</title>
+
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+        .dropbtn {
+          background-color: #3498DB;
+          color: white;
+          padding: 12px;
+          font-size: 18px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .dropbtn:hover, .dropbtn:focus {
+          background-color: #2980B9;
+        }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position:inherit;
+          background-color: #131111;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding:2px 2px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown a:hover {background-color: rgb(38, 97, 145);}
+        
+        .show {display: block;}
+        </style>
+   
+<header>
+
+</header>
+<body>
+       
+              
+<div class="container">
+	<div class="signIn">ADD QUESTIONS BY FILES</div>
+	<div class="fold">
+		<form>
+                <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Select </button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#java">JAVA</a>
+                          <a href="#sql">SQL</a>
+                          <a href="#php">PHP</a>
+                          <a href="#c/c++">C/C++</a>
+                          <a href="#python">PYTHON</a>
+                          <a href="#c#/.net">C#/.NET</a>
+                        </div>
+                      </div>
+                      <br><br>
+            <input type="file" name="" placeholder="SELECT FILE">
+            <br><br>
+			<center><input type="submit" name="" value="ADD"></center>
+		</form>
+	</div>
+</div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.signIn').click(function(){
+                $('.fold').toggleClass('active')
+            })
+        })
+   
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
+</html>
+

@@ -1,0 +1,83 @@
+body {
+    font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+  background: url(login_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  }
+  
+  .register-title {
+      width: 350px;
+      line-height: 43px;
+     
+      font-size: 25px;
+      font-weight: 500;
+      color: rgb(26, 25, 25);
+      color: rgba(white, .95);
+      text-align: center;
+      text-shadow: 0 1px rgba(black, .3);
+      background: #4c93f0;
+      border-radius: 3px;
+     
+    }
+    
+  
+  .register {
+    margin: 0 auto;
+    width: 350px;
+    padding: 20px;
+    background: #f5f6f6;
+    border-radius: 3px;
+    
+   
+  }
+  
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+   }
+  
+  .register-input {
+    display: block;
+    width: 100%;
+    height: 38px;
+    margin-top: 2px;
+    font-weight: 500;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #e68d8d;
+  
+   
+  }
+  
+  .register-button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      margin: 1px 1px;
+      cursor: pointer;
+      border-radius: 8px;
+   
+    }
+  .register-switch-input {
+    display: none;
+  }
+  
+  .register-switch-label {
+    float: left;
+    width: 50%;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 -1px rgba(black, .2);
+    cursor: pointer;
+  
+  }
+  
+  
