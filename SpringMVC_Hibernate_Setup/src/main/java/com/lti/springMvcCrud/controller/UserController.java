@@ -31,14 +31,14 @@ public class UserController {
 		this.userService = userService;
 	}
 
-
+/*
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public ModelAndView hello(HttpServletResponse response) throws IOException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("home");
 		return mv;
 	}
-
+*/
 	// Get All Users
 	@RequestMapping(value = "/allUsers", method = RequestMethod.POST)
 	public ModelAndView displayAllUser() {
