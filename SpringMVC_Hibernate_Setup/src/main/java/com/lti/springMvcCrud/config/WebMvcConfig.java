@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.lti.springMvcCrud")
-public class WebMvcConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
+public class WebMvcConfig  implements WebMvcConfigurer {
 
 
 	@Override
@@ -34,19 +34,7 @@ public class WebMvcConfig extends WebSecurityConfigurerAdapter implements WebMvc
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.jsp().prefix("/WEB-INF/views/").suffix(".jsp");
 	}
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName("home");
-	}
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder authentication) throws Exception{
-		authentication.inMemoryAuthentication().withUser("test").password("test").roles("ADMIN");
-		
-	}
-	
-	@Override 
-	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests().antMatchers("/","/hello").permitAll().antMatchers("/admin*").access("hasRole('ROLE_ADMIN')").and().formLogin();
-	}
+
+
 
 }
